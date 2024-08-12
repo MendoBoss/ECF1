@@ -6,6 +6,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .task__container{
     position: relative;
@@ -13,13 +14,59 @@ body{
     height: 300px; 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
-    padding:20px 10px;
+    padding:40px 10px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px 1px rgba(128, 128, 128, 0.473);
 }
 .task__delete{
     position: absolute;
     top: 3px;
-    right: 10px;
+    right: 3px;
+}
+.task__update{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+.btn__action{
+    background-color: rgb(204, 54, 0); 
+    padding:1rem 2rem;border-radius:10px;
+    margin-top: 3rem;
+    color:whitesmoke; 
+    font-size: 1.3rem;
+}
+.btn__action:hover{
+    background-color: rgb(228, 61, 1); 
+ 
+}
+.add{
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.800);
+    background-color:rgb(36, 92, 247); 
+    color: white; padding:3px 5px; 
+    font-weight:bold;
+    letter-spacing: 0.08rem;
+    ont-weight:600;width:100%; 
+}
+.add:hover{
+    background-color: rgb(30, 79, 212); ;
+}
+.sup{
+    border: none;
+    border-radius: 10px;
+    margin-top: 0px;
+    text-align: center;
+    font-weight:bold;
+    letter-spacing: 0.08rem;
+    box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.800);
+    background-color:rgb(247, 36, 36); 
+    color: white; padding:3px 5px; 
+    ont-weight:600;width:100%; 
+}
+.sup:hover{
+    background-color: rgb(212, 30, 30); ;
 }
