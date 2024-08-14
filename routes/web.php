@@ -21,11 +21,15 @@ Route::middleware('auth')->group(function () {
 });
 
 // gestion tasks
-Route::get('/',[TaskController::class, 'index'])->name('task.index');
+// afficher
+    Route::get('/',[TaskController::class, 'index'])->name('task.index');
+// trier
+    Route::get('/trier/{ordre}',[TaskController::class, 'trier'])->name('task.trier');
+
 Route::middleware('auth')->group(function () {
     Route::get('/add',[TaskController::class, 'add'])->name('task.add');
     Route::post('/add',[TaskController::class, 'storage'])->name('task.storage');
-    Route::get('/update/{task}',[TaskController::class, 'update'])->name('task.update');
+    Route::get('/update/{task}/{tri}',[TaskController::class, 'update'])->name('task.update');
     Route::post('/edit/{task}',[TaskController::class, 'edit'])->name('task.edit');
     Route::get('/state/{id}',[TaskController::class, 'state'])->name('task.state');
     Route::get('/delete/{id}',[TaskController::class, 'delete'])->name('task.delete');

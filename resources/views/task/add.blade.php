@@ -1,4 +1,4 @@
-@extends('layouts.tasks')
+{{-- @extends('layouts.tasks')
 @section('content')
     <div style="width: 100%; height:100vh;background-image: url('/images/img2.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;">
        <div style="width: 100%; height:100vh; background-color:rgba(128, 128, 128, 0.363); display:flex; justify-content:center;align-items:center">
@@ -26,4 +26,4 @@
             </div>
        </div>
     </div>
-@endsection
+@endsection --}}

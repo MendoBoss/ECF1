@@ -8,8 +8,11 @@
     @vite('resources/css/app.css')
 </head>
 <body style="width:100%">
-    @include('task.header')
+    {{-- @include('task.header') --}}
     @yield('content')
-    @include('task.footer')
+    {{-- @include('task.footer') --}}
+
+    @include('task.menu')
+
 </body>
 </html>
