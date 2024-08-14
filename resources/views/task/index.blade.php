@@ -25,7 +25,7 @@
             </ul>
         </div>
         {{-- tasks cards --}}
-        <div style="width: 100%; padding:40px; display:flex;flex-wrap:wrap; justify-content:center;gap:2rem;" id="taches">
+        <div style="width: 100%; padding:0px; display:flex;flex-wrap:wrap; justify-content:center;gap:2rem;" id="taches">
             @forelse ($tasks as $task)
                 @if ($task->state=='Faire')
                     <div class="task__container" style=" background-color:rgba(255, 255, 255, 0.836);">
