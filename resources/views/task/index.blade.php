@@ -100,6 +100,7 @@
         </div>
         {{-- update --}}
         @if (isset($task__one))
+            <input type="hidden" id="open" value="open">
             <div id="update">
                 <div style="display:flex; justify-content:end;padding: 0 12px">
                     <button id="update__close"><img src="/images/iconmonstr-x-mark-circle-lined-48_2.png" alt="" width="30px"></button>
@@ -108,15 +109,15 @@
                     @csrf
                     <h1 style="width: 100%; text-align:center; font-weight:600; font-size:2rem;color:white; padding:20px">Modifier une tâche</h1>
                     <div style="display: flex; flex-direction:column;">
-                        <label for="title" style="font-weight: 500;font-size:0.8rem">Titre</label>
+                        <label for="title" style="font-weight: 500;font-size:0.8rem;color:white">Titre</label>
                         <input style="border: none;border-radius: 10px;box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.800);}" value="{{$task__one->title}}" type="text" name="title" required>
                     </div> 
                     <div style="display: flex; flex-direction:column;">
-                        <label for="description" style="font-weight: 500;font-size:0.8rem">Descrition</label>
+                        <label for="description" style="font-weight: 500;font-size:0.8rem;color:white">Descrition</label>
                         <textarea style="border: none;border-radius: 10px;box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.800);}" name="description"  cols="30" rows="5" required>{{$task__one->description}}</textarea>
                     </div> 
                     <div style="display: flex; flex-direction:column;">
-                        <label for="avantle" style="font-weight: 500;font-size:0.8rem">Avant le</label>
+                        <label for="avantle" style="font-weight: 500;font-size:0.8rem;color:white">Avant le</label>
                         <input style="border: none;border-radius: 10px;box-shadow: 1px 1px 5px 1px rgba(128, 128, 128, 0.800);}" value="{{$task__one->avantLe}}" type="date" name="avantle" required>
                     </div> 
                     <div>
@@ -127,7 +128,9 @@
                     <a href="{{route('task.delete',$task__one->id)}}" class="sup">Supprimer la tâche</a>
                 </div>
 
-            </div>            
+            </div>  
+        @else
+            <input type="hidden" id="open" value="close">          
         @endif
 
     </div>
@@ -142,9 +145,12 @@
         var update__close = document.getElementById('update__close');
         var update = document.getElementById('update');
 
+        var open = document.getElementById('open').value;
+
+        
         // trier
         tri.addEventListener('click',function(){
-
+            
             if(hidde == 0){
                 tri_ul.hidden = false;
                 hidde = 1;
@@ -153,11 +159,14 @@
                 hidde = 0;
             }
         })
-
+        
         // update
         update__close.addEventListener('click',function(){
             update.style.translate='-100%';
         })
+        if(open == 'open'){
+            setTimeout(()=>{update.style.translate='100%';},100)
+        }
 
 
     </script>
